@@ -1,1 +1,1 @@
-# goit-markup-hw-08
+# goit-js-markup-hw-06
