@@ -1,7 +1,7 @@
 const form = document.querySelector(`form`);
 
 const formEmailEl = document.querySelector(`input[type="email"]`);
-console.log(formEmailEl);
+
 const formPasswordlEl = document.querySelector(`input[type="password"]`);
 
 form.addEventListener(`submit`, onFormSubmit);
@@ -13,11 +13,14 @@ function onFormSubmit(event) {
 
     const email = formEl.email.value;
     const password = formEl.password.value;
-    const formData = new FormData(event.currentTarget);
-    email.length === 0 || password.length === 0 ? outAlert() :
-        outData();
+    // const formData = new FormData(event.currentTarget);
+    // email.length === 0 || password.length === 0 ? outAlert() :
+    //     outData();
 
-};
+    if (email.length === 0 || password.length === 0) { outAlert() }
+    else{outData()}
+    
+}; 
 
 function outAlert() {
     if (formEmailEl.value.length === 0) {
@@ -29,7 +32,13 @@ function outAlert() {
 };
 
 function outData() {
-    console.dir(`email: ${formEmailEl.value} password: ${formPasswordlEl.value}`);
+
+    const data = {
+        email: formEmailEl.value,
+        password: formPasswordlEl.value,
+    }
+    console.dir(data)
+    // console.dir(`email: ${formEmailEl.value} password: ${formPasswordlEl.value}`);
     formPasswordlEl.removeAttribute(`placeholder`);
     form.reset();
 };
