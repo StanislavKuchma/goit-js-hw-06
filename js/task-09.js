@@ -8,7 +8,11 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`
   };
 function onButtonClick() {    
-  bodyEl.setAttribute(`style`, `background-color: ${getRandomHexColor()}`);
+
+  const backColor = getRandomHexColor();
+  bodyEl.setAttribute(`style`, `background-color: ${backColor}`);
   
-  bodyColorEl.textContent = `${getRandomHexColor()}`;
+  bodyColorEl.textContent = `${backColor}`;
+
+  console.log(backColor);
 };

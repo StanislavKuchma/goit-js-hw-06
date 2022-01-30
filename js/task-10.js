@@ -12,8 +12,8 @@ buttonDestroyEl.addEventListener(`click`, destroyDiv);
 
 function createDiv() {
     const elements = [];
-    let widthDiv = 10;
-    let heightDiv = 10;
+    let widthDiv = 30;
+    let heightDiv = 30;
 for (let index = 1; index <= numberEl.value; index++) {
     const divEl = document.createElement(`div`);
  
@@ -23,14 +23,15 @@ for (let index = 1; index <= numberEl.value; index++) {
     
     elements.push(divEl);
  
-    widthDiv += 30;
-    heightDiv += 30;
+    widthDiv += 10;
+    heightDiv += 10;
 }
     boxDiv.append(...elements);
 };
 
 function destroyDiv() {
     boxDiv.innerHTML = ``;
+    numberEl.value = ``;
 };
 
 function getRandomHexColor() {

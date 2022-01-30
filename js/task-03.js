@@ -16,7 +16,8 @@ const listImagesEl = document.querySelector(".gallery");
 
 const imgEl = images.map(option => {
 
-  
+  return  `<li><img class= "item" src = ${option.url}, alt = ${option.alt}>
+</li>`
 //   const imgEl = document.createElement("img");
 //   imgEl.src = option.url;
 //   imgEl.alt = option.alt;
@@ -30,12 +31,7 @@ const imgEl = images.map(option => {
 //   return liEl;
 // })
 // listImagesEl.append(...imgEl);
-
-listImagesEl.insertAdjacentHTML("beforeend", `<li><img class= "item" src = ${option.url}, alt = ${option.alt}>
-</li>`);
 })
-console.log(listImagesEl);
-
-
+listImagesEl.insertAdjacentHTML("beforeend", imgEl);
 
 
